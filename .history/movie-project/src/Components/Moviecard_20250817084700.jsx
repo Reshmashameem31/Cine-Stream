@@ -1,0 +1,27 @@
+import React from 'react'
+import {FaHeart, FaRegHeart } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+    const Moviecard=({movie})=>{
+     const[golden,setgolden]=useState(false)
+    useEffect(()=>{
+      setgolden(true)
+      const timer=setTimeout(()=>
+        setgolden(false),2000)
+         return() =>clearTimeout(timer)
+    },[])
+  return (
+    
+    <div className=' bg-[#1F1F1F] p-4 rounded-lg font-serif  shadow-md  shadow-[#a4faffde] transition-transform duration-300 transform hover:scale-105 hover:z-10 hover:shadow-[rgb(248,199,76)]  relative opacity-100 group-hover:opacity-60 hover:!opacity-100 '>
+       
+       <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className='w-full h-80 object-contain rounded-sm' />
+        <h3 className='text-lg font-bold mt-4 text-[#C5A236] hover:text-[#b8860b] cursor-pointer drop-shadow-lg'>{movie.title}</h3>
+        <p className='text-md text-yellow-600 hover:text-yellow-800 cursor-pointer '>{movie.release_date}</p>
+        <button className='absolute top-2 right-2 text-red-500 text-xl'>{1!==1?<FaHeart/>:<FaRegHeart/>
+            }
+         
+        </button>
+    </div>
+  )
+}
+
+export default Moviecard
