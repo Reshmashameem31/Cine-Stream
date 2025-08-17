@@ -3,7 +3,7 @@
   
   import { useState } from 'react'
   import Navbar from './pages/Navbar'
-import Watchlist from './pages/Watchlist'
+ import W
   import Home from './pages/Home'
   import { WatchListProvider } from './context/WatchListContext'
   function App() {
@@ -16,7 +16,7 @@ import Watchlist from './pages/Watchlist'
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-          <Route path='/watchlist' element={<Watchlist/>}></Route>
+          <Route path='/Watchlist' element={<Watchlist/>}></Route>
       </Routes>
       </BrowserRouter></WatchListProvider>
     )
